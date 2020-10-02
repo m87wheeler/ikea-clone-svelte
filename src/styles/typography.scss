@@ -1,0 +1,26 @@
+@import './theme.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+$font-family: (
+  sans: 'Roboto',
+  serif: 'Roboto Slab',
+  mono: 'Source Code Pro',
+);
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: map-get($font-family, serif), serif;
+}
+
+p {
+  font-family: map-get($font-family, sans);
+  font-size: 1rem;
+  line-height: 1.5rem;
+}

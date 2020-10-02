@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "App.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n</script>\n\n<style type=\"text/scss\">@import url(\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap\");\n@import url(\"https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&display=swap\");\n@import url(\"https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap\");\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: \"Roboto Slab\", serif; }\n\np {\n  font-family: \"Roboto\";\n  font-size: 1rem;\n  line-height: 1.5rem; }\n</style>\n\n<h1 class=\"header\">Hello World</h1>\n<p>\n  Eiusmod proident sit laboris proident non tempor aliquip. Magna occaecat\n  officia fugiat ad minim sit. In exercitation et duis id sunt magna enim eu\n  pariatur aliquip excepteur reprehenderit irure et. Amet cupidatat nostrud\n  nulla cupidatat pariatur esse aliqua mollit. Excepteur consectetur Lorem\n  occaecat do ipsum incididunt deserunt. Irure ea cillum laboris eu elit\n  occaecat quis labore ut excepteur ullamco magna. Sunt fugiat aliquip aute\n  magna nisi culpa consequat ullamco dolor id.\n</p>\n"
+  ],
+  "names": [],
+  "mappings": "AAGwB,QAAQ,IAAI,gGAAgG,CAAC,CAAC,AACtI,QAAQ,IAAI,oFAAoF,CAAC,CAAC,AAClG,QAAQ,IAAI,uEAAuE,CAAC,CAAC,AACrF,EAAE,eAKC,CAAC,AACF,WAAW,CAAE,aAAa,CAAC,CAAC,KAAK,AAAE,CAAC,AAEtC,CAAC,eAAC,CAAC,AACD,WAAW,CAAE,QAAQ,CACrB,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,MAAM,AAAE,CAAC"
+}
