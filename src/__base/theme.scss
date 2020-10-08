@@ -1,0 +1,32 @@
+// *****     BASIC COLORS     *****
+$grey: (
+  _1: #111,
+  _2: #222,
+  _3: #333,
+  _4: #444,
+  _5: #555,
+  _6: #666,
+  _7: #777,
+  _8: #888,
+  _9: #999,
+  _a: #a2a2a2,
+  _b: #bbb,
+  _c: #c4c4c4,
+  _d: #ddd,
+  _e: #eee,
+  _f: #fff,
+);
+$white: whitesmoke;
+$black: #000;
+$danger: crimson;
+$confirm: limegreen;
+
+// *****     THEME COLORS     *****
+$primary: map-get($grey, _2);
+$secondary: map-get($grey, _3);
+
+// *****     EFFECTS     *****
+$shadow: (
+  default: 0 1px 3px rgba(0, 0, 0, 0.12),
+  hover: 0 14px 28px rgba(0, 0, 0, 0.25),
+);
