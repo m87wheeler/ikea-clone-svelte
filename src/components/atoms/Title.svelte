@@ -1,5 +1,6 @@
 <script>
   export let type = "h1";
+  export let style;
 </script>
 
 <style type="text/scss">
@@ -34,27 +35,27 @@
 </style>
 
 {#if type === 'h1'}
-  <h1>
+  <h1 {style}>
     <slot />
   </h1>
 {:else if type === 'h2'}
-  <h2>
+  <h2 {style}>
     <slot />
   </h2>
 {:else if type === 'h3'}
-  <h3>
+  <h3 {style}>
     <slot />
   </h3>
 {:else if type === 'h4'}
-  <h4>
+  <h4 {style}>
     <slot />
   </h4>
 {:else if type === 'h5'}
-  <h5>
+  <h5 {style}>
     <slot />
   </h5>
 {:else if type === 'h6'}
-  <h6>
+  <h6 {style}>
     <slot />
   </h6>
 {/if}

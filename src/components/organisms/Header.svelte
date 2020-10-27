@@ -1,6 +1,10 @@
 <script>
   import Icon from "../atoms/Icon.svelte";
-  let src = "./images/logo/ikea-logo-small.svg";
+  let src = "images/logo/ikea-logo-small.svg";
+
+  import { createEventDispatcher } from "svelte";
+  const dispatch = createEventDispatcher();
+  const toggleNav = () => dispatch("toggle", { show: true });
 </script>
 
 <style type="text/scss">
@@ -27,5 +31,5 @@
   <Icon icon="user" ref="header-icon" />
   <Icon icon="wishList" ref="header-icon" />
   <Icon icon="shoppingBag" ref="header-icon" />
-  <Icon icon="menu" ref="header-icon" />
+  <Icon icon="menu" ref="header-icon" on:click={toggleNav} />
 </header>

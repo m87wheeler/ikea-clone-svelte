@@ -1,9 +1,11 @@
 <script>
+  import Close from "../../svg/Close.svelte";
   import ImageSearch from "../../svg/ImageSearch.svelte";
   import Menu from "../../svg/Menu.svelte";
   import Notification from "../../svg/Notification.svelte";
   import Search from "../../svg/Search.svelte";
   import ShoppingBag from "../../svg/ShoppingBag.svelte";
+  import StadardArrow from "../../svg/StadardArrow.svelte";
   import ToggleArrow from "../../svg/ToggleArrow.svelte";
   import User from "../../svg/User.svelte";
   import WishList from "../../svg/WishList.svelte";
@@ -89,10 +91,13 @@
   {ref}
   on:click
   class={`container ${small ? 'container--small' : xsmall ? 'container--xsmall' : null} ${!hover && 'container--no-hover'}`}
-  style={`cursor: ${cursor} ${style}`}>
+  style={`cursor: ${cursor}; ${style}`}
+  on:click>
   <div class={`background-color background-color--${background}`} />
   <div class="icon">
-    {#if icon === 'imageSearch'}
+    {#if icon === 'close'}
+      <Close />
+    {:else if icon === 'imageSearch'}
       <ImageSearch />
     {:else if icon === 'menu'}
       <Menu />
@@ -102,6 +107,8 @@
       <Search />
     {:else if icon === 'shoppingBag'}
       <ShoppingBag />
+    {:else if icon === 'arrow'}
+      <StadardArrow />
     {:else if icon === 'toggleArrow'}
       <ToggleArrow />
     {:else if icon === 'user'}

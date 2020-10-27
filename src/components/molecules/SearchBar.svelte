@@ -3,6 +3,8 @@
 
   export let placeholder = "Search";
   export let hover = false;
+  export let noIcon = false;
+  export let style;
 </script>
 
 <style type="text/scss">
@@ -57,10 +59,13 @@
 </style>
 
 <div
-  class={`search-bar ${hover ? 'search-bar__secondary' : 'search-bar__primary'}`}>
+  class={`search-bar ${hover ? 'search-bar__secondary' : 'search-bar__primary'}`}
+  {style}>
   <form>
     <Icon icon="search" cursor="text" hover={false} />
     <input type="text" {placeholder} />
   </form>
-  <Icon icon="imageSearch" small background="light-gray" />
+  {#if !noIcon}
+    <Icon icon="imageSearch" small background="light-gray" />
+  {/if}
 </div>
