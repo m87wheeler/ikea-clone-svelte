@@ -6,13 +6,12 @@
   import Button from "../atoms/Button.svelte";
   import Card from "../atoms/Card.svelte";
   import SectionText from "../atoms/SectionText.svelte";
+  import LargeProductCard from "../molecules/LargeProductCard.svelte";
   import Link from "../atoms/Link.svelte";
   import SeeMoreCard from "../molecules/SeeMoreCard.svelte";
-  import ImageOverlay from "../atoms/ImageOverlay.svelte";
-  import HoverCard from "../organisms/HoverCard.svelte";
+  import ImageOverlay from "../molecules/ImageOverlay.svelte";
 
   import { productData } from "./productData";
-  import LargeProductCard from "../molecules/LargeProductCard.svelte";
 </script>
 
 <style type="text/scss">
@@ -43,40 +42,10 @@
     everything you need to create a festive feel.
   </SectionText>
   <ImageCard src="images/photos/strala-lights.jpg">
-    <ImageOverlay>
-      {#each productData[0] as product}
-        <HoverCard
-          visible={product.visible}
-          x={product.x}
-          y={product.y}
-          position={product.position}
-          news={product.news}
-          family={product.family}
-          title={product.title}
-          productType={product.productType}
-          regularPrice={product.regularPrice}
-          price={product.price}
-          pieces={product.pieces} />
-      {/each}
-    </ImageOverlay>
+    <ImageOverlay data={productData[0]} />
   </ImageCard>
   <ImageCard src="images/photos/christmas-decor.jpg">
-    <ImageOverlay>
-      {#each productData[1] as product}
-        <HoverCard
-          visible={product.visible}
-          x={product.x}
-          y={product.y}
-          position={product.position}
-          news={product.news}
-          family={product.family}
-          title={product.title}
-          productType={product.productType}
-          regularPrice={product.regularPrice}
-          price={product.price}
-          pieces={product.pieces} />
-      {/each}
-    </ImageOverlay>
+    <ImageOverlay data={productData[1]} />
   </ImageCard>
   <Link style="display: grid; margin: 1.25rem 0 1rem 0;" icon>
     See all products for Christmas
