@@ -1,18 +1,17 @@
 <script>
+  import HeadNotification from "./components/molecules/HeadNotification.svelte";
+  import Header from "./components/molecules/Header.svelte";
+  import SearchBar from "./components/molecules/SearchBar.svelte";
+  import Homepage from "./components/views/Homepage.svelte";
 </script>
 
 <style type="text/scss">
-  @import './styles/theme.scss';
-  @import './styles/typography.scss';
 </style>
 
-<h1 class="header">Hello World</h1>
-<p>
-  Eiusmod proident sit laboris proident non tempor aliquip. Magna occaecat
-  officia fugiat ad minim sit. In exercitation et duis id sunt magna enim eu
-  pariatur aliquip excepteur reprehenderit irure et. Amet cupidatat nostrud
-  nulla cupidatat pariatur esse aliqua mollit. Excepteur consectetur Lorem
-  occaecat do ipsum incididunt deserunt. Irure ea cillum laboris eu elit
-  occaecat quis labore ut excepteur ullamco magna. Sunt fugiat aliquip aute
-  magna nisi culpa consequat ullamco dolor id.
-</p>
+<HeadNotification
+  text="Our Christmas shop is now open"
+  action="link"
+  href="#" />
+<Header />
+<SearchBar placeholder="What are you looking for?" hover />
+<Homepage />

@@ -1,0 +1,10 @@
+@import "../style/Theme.scss";
+
+svg {
+  width: 1.5rem;
+  height: 1.5rem;
+
+  path {
+    fill: $color-gray-900;
+  }
+}

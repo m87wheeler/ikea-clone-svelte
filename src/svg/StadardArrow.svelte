@@ -1,0 +1,11 @@
+<script>
+</script>
+
+<style type="text/scss">
+  @import "./SVGTheme.scss";
+</style>
+
+<svg focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M19.2937 12.7074L20.0008 12.0003L19.2938 11.2932L12.0008 3.99927L10.5865 5.41339L16.1727 11.0003H4V13.0003H16.1723L10.5855 18.5868L11.9996 20.0011L19.2937 12.7074Z" /></svg>
