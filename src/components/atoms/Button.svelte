@@ -14,7 +14,7 @@
     height: auto;
     padding: 0.75rem 1.5rem;
     border: 1px solid $color-gray-200;
-    border-radius: 1.5rem;
+    border-radius: 2.5rem;
     font-family: $font-sans;
     font-size: 0.75rem;
     line-height: 1.333;

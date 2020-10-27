@@ -46,6 +46,7 @@
     <ImageOverlay>
       {#each productData[0] as product}
         <HoverCard
+          visible={product.visible}
           x={product.x}
           y={product.y}
           position={product.position}
@@ -63,6 +64,7 @@
     <ImageOverlay>
       {#each productData[1] as product}
         <HoverCard
+          visible={product.visible}
           x={product.x}
           y={product.y}
           position={product.position}

@@ -1,6 +1,7 @@
 export const productData = [
   [
     {
+      visible: true,
       x: 30,
       y: 36,
       position: "top",
@@ -14,6 +15,7 @@ export const productData = [
       href: "",
     },
     {
+      visible: false,
       x: 17,
       y: 10,
       position: "left",
@@ -27,6 +29,7 @@ export const productData = [
       href: "",
     },
     {
+      visible: false,
       x: 47,
       y: 20,
       position: "right",
@@ -40,6 +43,7 @@ export const productData = [
       href: "",
     },
     {
+      visible: false,
       x: 36,
       y: 55,
       position: "right",
@@ -55,6 +59,7 @@ export const productData = [
   ],
   [
     {
+      visible: false,
       x: 24,
       y: 34,
       position: "top",
@@ -68,6 +73,7 @@ export const productData = [
       href: "",
     },
     {
+      visible: true,
       x: 24,
       y: 34,
       position: "right",
@@ -81,6 +87,7 @@ export const productData = [
       href: "",
     },
     {
+      visible: false,
       x: 22,
       y: 64,
       position: "left",

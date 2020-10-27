@@ -3504,7 +3504,7 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			if (default_slot) default_slot.c();
-    			attr_dev(button, "class", "button svelte-1r6rhq9");
+    			attr_dev(button, "class", "button svelte-12q5shk");
     			attr_dev(button, "style", /*style*/ ctx[3]);
     			toggle_class(button, "button--secondary", /*secondary*/ ctx[0]);
     			toggle_class(button, "button--tertiary", /*tertiary*/ ctx[1]);
@@ -3575,7 +3575,7 @@ var app = (function () {
     		c: function create() {
     			a = element("a");
     			if (default_slot) default_slot.c();
-    			attr_dev(a, "class", "button svelte-1r6rhq9");
+    			attr_dev(a, "class", "button svelte-12q5shk");
     			attr_dev(a, "href", /*href*/ ctx[2]);
     			attr_dev(a, "style", /*style*/ ctx[3]);
     			toggle_class(a, "button--secondary", /*secondary*/ ctx[0]);
@@ -5855,6 +5855,7 @@ var app = (function () {
     const productData = [
       [
         {
+          visible: true,
           x: 30,
           y: 36,
           position: "top",
@@ -5868,6 +5869,7 @@ var app = (function () {
           href: "",
         },
         {
+          visible: false,
           x: 17,
           y: 10,
           position: "left",
@@ -5881,6 +5883,7 @@ var app = (function () {
           href: "",
         },
         {
+          visible: false,
           x: 47,
           y: 20,
           position: "right",
@@ -5894,6 +5897,7 @@ var app = (function () {
           href: "",
         },
         {
+          visible: false,
           x: 36,
           y: 55,
           position: "right",
@@ -5909,6 +5913,7 @@ var app = (function () {
       ],
       [
         {
+          visible: false,
           x: 24,
           y: 34,
           position: "top",
@@ -5922,6 +5927,7 @@ var app = (function () {
           href: "",
         },
         {
+          visible: true,
           x: 24,
           y: 34,
           position: "right",
@@ -5935,6 +5941,7 @@ var app = (function () {
           href: "",
         },
         {
+          visible: false,
           x: 22,
           y: 64,
           position: "left",
@@ -6817,6 +6824,7 @@ var app = (function () {
 
     	hovercard = new HoverCard({
     			props: {
+    				visible: /*product*/ ctx[0].visible,
     				x: /*product*/ ctx[0].x,
     				y: /*product*/ ctx[0].y,
     				position: /*product*/ ctx[0].position,
@@ -7016,13 +7024,14 @@ var app = (function () {
     	return block;
     }
 
-    // (63:6) {#each productData[1] as product}
+    // (64:6) {#each productData[1] as product}
     function create_each_block(ctx) {
     	let hovercard;
     	let current;
 
     	hovercard = new HoverCard({
     			props: {
+    				visible: /*product*/ ctx[0].visible,
     				x: /*product*/ ctx[0].x,
     				y: /*product*/ ctx[0].y,
     				position: /*product*/ ctx[0].position,
@@ -7064,14 +7073,14 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(63:6) {#each productData[1] as product}",
+    		source: "(64:6) {#each productData[1] as product}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (62:4) <ImageOverlay>
+    // (63:4) <ImageOverlay>
     function create_default_slot_6(ctx) {
     	let each_1_anchor;
     	let current;
@@ -7160,14 +7169,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6.name,
     		type: "slot",
-    		source: "(62:4) <ImageOverlay>",
+    		source: "(63:4) <ImageOverlay>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (61:2) <ImageCard src="images/photos/christmas-decor.jpg">
+    // (62:2) <ImageCard src="images/photos/christmas-decor.jpg">
     function create_default_slot_5(ctx) {
     	let imageoverlay;
     	let current;
@@ -7215,14 +7224,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5.name,
     		type: "slot",
-    		source: "(61:2) <ImageCard src=\\\"images/photos/christmas-decor.jpg\\\">",
+    		source: "(62:2) <ImageCard src=\\\"images/photos/christmas-decor.jpg\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (78:2) <Link style="display: grid; margin: 1.25rem 0 1rem 0;" icon>
+    // (80:2) <Link style="display: grid; margin: 1.25rem 0 1rem 0;" icon>
     function create_default_slot_4(ctx) {
     	let t;
 
@@ -7242,7 +7251,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_4.name,
     		type: "slot",
-    		source: "(78:2) <Link style=\\\"display: grid; margin: 1.25rem 0 1rem 0;\\\" icon>",
+    		source: "(80:2) <Link style=\\\"display: grid; margin: 1.25rem 0 1rem 0;\\\" icon>",
     		ctx
     	});
 
@@ -7421,7 +7430,7 @@ var app = (function () {
     	return block;
     }
 
-    // (84:2) <Title>
+    // (86:2) <Title>
     function create_default_slot_2$1(ctx) {
     	let t;
 
@@ -7441,14 +7450,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$1.name,
     		type: "slot",
-    		source: "(84:2) <Title>",
+    		source: "(86:2) <Title>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (86:2) <LargeProductCard      title="FABRIKÖR Glass door cabinet"      buttonText="Browse our new lower prices">
+    // (88:2) <LargeProductCard      title="FABRIKÖR Glass door cabinet"      buttonText="Browse our new lower prices">
     function create_default_slot_1$3(ctx) {
     	let p0;
     	let t1;
@@ -7465,11 +7474,11 @@ var app = (function () {
     			set_style(p0, "font-size", "0.875rem");
     			set_style(p0, "font-weight", "700");
     			set_style(p0, "line-height", "1.7142");
-    			add_location(p0, file$t, 88, 4, 3016);
+    			add_location(p0, file$t, 90, 4, 3090);
     			set_style(p1, "margin-bottom", "0.625rem");
     			set_style(p1, "font-size", "0.875rem");
     			set_style(p1, "line-height", "1.7142");
-    			add_location(p1, file$t, 96, 4, 3172);
+    			add_location(p1, file$t, 98, 4, 3246);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p0, anchor);
@@ -7487,14 +7496,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$3.name,
     		type: "slot",
-    		source: "(86:2) <LargeProductCard      title=\\\"FABRIKÖR Glass door cabinet\\\"      buttonText=\\\"Browse our new lower prices\\\">",
+    		source: "(88:2) <LargeProductCard      title=\\\"FABRIKÖR Glass door cabinet\\\"      buttonText=\\\"Browse our new lower prices\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (83:0) <Section>
+    // (85:0) <Section>
     function create_default_slot$4(ctx) {
     	let title;
     	let t0;
@@ -7598,7 +7607,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$4.name,
     		type: "slot",
-    		source: "(83:0) <Section>",
+    		source: "(85:0) <Section>",
     		ctx
     	});
 
