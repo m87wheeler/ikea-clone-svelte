@@ -1,13 +1,9 @@
 <script>
-  import { propTypes } from "../../assets/PropTypes";
   import ToggleArrow from "../../svg/ToggleArrow.svelte";
 
   export let href = "/";
   export let icon = false;
   export let style;
-
-  propTypes(href, "string");
-  propTypes(icon, "bool");
 </script>
 
 <style type="text/scss">

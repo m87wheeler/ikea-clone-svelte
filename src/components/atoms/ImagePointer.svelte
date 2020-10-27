@@ -1,17 +1,11 @@
 <script>
-  import { propTypes } from "../../assets/PropTypes";
-
-  export let x = 0;
-  export let y = 0;
-  propTypes(y, "number");
-  propTypes(x, "number");
 </script>
 
 <style type="text/scss">
   @import "../../style/Theme.scss";
 
   .pointer {
-    position: absolute;
+    position: relative;
     width: 2rem;
     height: 2rem;
     border: 2px solid transparent;
@@ -45,4 +39,4 @@
   }
 </style>
 
-<div class="pointer" style={`left: ${x}%; top: ${y}%`} />
+<div class="pointer" on:mouseenter />

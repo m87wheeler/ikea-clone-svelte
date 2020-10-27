@@ -1,13 +1,8 @@
 <script>
-  import { propTypes } from "../../assets/PropTypes";
-
   import Icon from "../atoms/Icon.svelte";
 
   export let placeholder = "Search";
   export let hover = false;
-
-  propTypes(hover, "bool");
-  propTypes(placeholder, "string");
 </script>
 
 <style type="text/scss">

@@ -1,6 +1,4 @@
 <script>
-  import { propTypes } from "../../assets/PropTypes";
-
   import ImageSearch from "../../svg/ImageSearch.svelte";
   import Menu from "../../svg/Menu.svelte";
   import Notification from "../../svg/Notification.svelte";
@@ -18,29 +16,6 @@
   export let hover = true;
   export let style = "";
   export let background = "gray-100";
-
-  propTypes(cursor, [
-    "auto",
-    "default",
-    "pointer",
-    "text",
-    "zoom-in",
-    "zoom-out",
-  ]);
-  propTypes(icon, [
-    "imageSearch",
-    "menu",
-    "notification",
-    "search",
-    "shoppingBag",
-    "toggleArrow",
-    "user",
-    "wishList",
-  ]);
-  propTypes(small, "bool");
-  propTypes(xsmall, "bool");
-  propTypes(hover, "bool");
-  propTypes(background, ["light-gray", "gray-100", "gray-800"]);
 </script>
 
 <style type="text/scss">

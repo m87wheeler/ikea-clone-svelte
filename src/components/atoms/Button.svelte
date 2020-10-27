@@ -1,12 +1,8 @@
 <script>
-  import { propTypes } from "../../assets/PropTypes";
-
   export let secondary = false;
   export let tertiary = false;
   export let href;
-
-  propTypes(secondary, "bool");
-  propTypes(tertiary, "bool");
+  export let style;
 </script>
 
 <style type="text/scss">
@@ -16,7 +12,7 @@
     display: inline-block;
     min-width: 8.125rem;
     height: auto;
-    padding: 0.625rem;
+    padding: 0.75rem 1.5rem;
     border: 1px solid $color-gray-200;
     border-radius: 1.5rem;
     font-family: $font-sans;
@@ -63,10 +59,12 @@
     class="button"
     class:button--secondary={secondary}
     class:button--tertiary={tertiary}
-    {href}><slot /></a>
+    {href}
+    {style}><slot /></a>
 {:else}
   <button
     class="button"
     class:button--secondary={secondary}
-    class:button--tertiary={tertiary}><slot /></button>
+    class:button--tertiary={tertiary}
+    {style}><slot /></button>
 {/if}

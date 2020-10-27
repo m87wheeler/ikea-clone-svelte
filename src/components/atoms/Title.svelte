@@ -1,9 +1,5 @@
 <script>
-  import { propTypes } from "../../assets/PropTypes";
-
   export let type = "h1";
-
-  propTypes(type, ["h1", "h2", "h3", "h4", "h5", "h6"]);
 </script>
 
 <style type="text/scss">

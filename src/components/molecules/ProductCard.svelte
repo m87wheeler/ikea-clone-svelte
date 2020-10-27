@@ -1,6 +1,4 @@
 <script>
-  import { propTypes } from "../../assets/PropTypes";
-
   import Card from "../atoms/Card.svelte";
   import Family from "../atoms/Family.svelte";
   import Icon from "../atoms/Icon.svelte";
@@ -15,15 +13,7 @@
   export let regularPrice = 0;
   export let price = 0;
   export let pieces = 0;
-
-  propTypes(news, "bool");
-  propTypes(family, "bool");
-  propTypes(href, "string");
-  propTypes(title, "string");
-  propTypes(productType, "string");
-  propTypes(regularPrice, "number");
-  propTypes(price, "number");
-  propTypes(pieces, "number");
+  export let style = "";
 </script>
 
 <style type="text/scss">
@@ -94,7 +84,7 @@
   }
 </style>
 
-<Card shadow>
+<Card shadow {style}>
   <div class="info">
     <div class="info__promotional">
       {#if news}

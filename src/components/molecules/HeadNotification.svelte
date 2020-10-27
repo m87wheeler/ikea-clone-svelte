@@ -1,6 +1,4 @@
 <script>
-  import { propTypes } from "../../assets/PropTypes";
-  import Notification from "../../svg/Notification.svelte";
   import Icon from "../atoms/Icon.svelte";
 
   export let text = "Notification";
@@ -8,11 +6,6 @@
   export let href = "Homepage";
   export let show = false;
   export let expand = false;
-
-  propTypes(text, "string");
-  propTypes(action, ["link", "reminder"]);
-  propTypes(href, "string");
-  propTypes(expand, "bool");
 
   const toggleexpand = () => {
     expand = !expand;

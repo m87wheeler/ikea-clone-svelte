@@ -1,12 +1,10 @@
 <script>
-  import { propTypes } from "../../assets/PropTypes";
   import Card from "../atoms/Card.svelte";
   import StandardArrow from "../../svg/StadardArrow.svelte";
   import Link from "../atoms/Link.svelte";
 
   export let style;
   export let href = "/";
-  propTypes(href, "string");
 </script>
 
 <style type="text/scss">

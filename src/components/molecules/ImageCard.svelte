@@ -1,6 +1,4 @@
 <script>
-  import { propTypes } from "../../assets/PropTypes";
-
   import Card from "../atoms/Card.svelte";
 
   export let src = "";
@@ -8,12 +6,6 @@
   export let left = 50;
   export let orientation = "portrait";
   export let aspectRatio = "4:3";
-
-  propTypes(src, "string");
-  propTypes(top, "number");
-  propTypes(left, "number");
-  propTypes(orientation, ["portrait", "landscape"]);
-  propTypes(aspectRatio, ["16:9", "4:3", "1:1"]);
 
   let style;
   if (aspectRatio === "16:9") {

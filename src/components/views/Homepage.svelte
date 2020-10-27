@@ -3,14 +3,16 @@
   import Section from "../atoms/Section.svelte";
   import Rule from "../atoms/Rule.svelte";
   import ImageCard from "../molecules/ImageCard.svelte";
-  import ProductCard from "../molecules/ProductCard.svelte";
   import Button from "../atoms/Button.svelte";
   import Card from "../atoms/Card.svelte";
   import SectionText from "../atoms/SectionText.svelte";
   import Link from "../atoms/Link.svelte";
   import SeeMoreCard from "../molecules/SeeMoreCard.svelte";
-  import ImagePointer from "../atoms/ImagePointer.svelte";
   import ImageOverlay from "../atoms/ImageOverlay.svelte";
+  import HoverCard from "../organisms/HoverCard.svelte";
+
+  import { productData } from "./productData";
+  import LargeProductCard from "../molecules/LargeProductCard.svelte";
 </script>
 
 <style type="text/scss">
@@ -18,19 +20,6 @@
 
 <Section>
   <Title>Make moments to treasure</Title>
-  <!-- <ProductCard
-    news
-    family
-    title="STRÅLA"
-    productType="Lamp shade"
-    regularPrice={13}
-    price={11} />
-  <ProductCard
-    news
-    title="VINTER 2020"
-    productType="Decoration bauble..."
-    price={9}
-    pieces={32} /> -->
   <ImageCard src="images/photos/festive-baking.jpg" left={10}>
     <SeeMoreCard style="position: absolute; bottom: 1rem; left: 1rem;">
       See more cookware & tableware
@@ -55,21 +44,64 @@
   </SectionText>
   <ImageCard src="images/photos/strala-lights.jpg">
     <ImageOverlay>
-      <ImagePointer x={20} y={20} />
-      <ImagePointer x={24} y={38} />
-      <ImagePointer x={74} y={26} />
-      <ImagePointer x={72} y={65} />
+      {#each productData[0] as product}
+        <HoverCard
+          x={product.x}
+          y={product.y}
+          position={product.position}
+          news={product.news}
+          family={product.family}
+          title={product.title}
+          productType={product.productType}
+          regularPrice={product.regularPrice}
+          price={product.price}
+          pieces={product.pieces} />
+      {/each}
     </ImageOverlay>
   </ImageCard>
   <ImageCard src="images/photos/christmas-decor.jpg">
     <ImageOverlay>
-      <ImagePointer x={41} y={33} />
-      <ImagePointer x={55} y={40} />
-      <ImagePointer x={25} y={75} />
+      {#each productData[1] as product}
+        <HoverCard
+          x={product.x}
+          y={product.y}
+          position={product.position}
+          news={product.news}
+          family={product.family}
+          title={product.title}
+          productType={product.productType}
+          regularPrice={product.regularPrice}
+          price={product.price}
+          pieces={product.pieces} />
+      {/each}
     </ImageOverlay>
   </ImageCard>
   <Link style="display: grid; margin: 1.25rem 0 1rem 0;" icon>
     See all products for Christmas
   </Link>
+  <Rule />
+</Section>
+<Section>
+  <Title>New lower prices, same great quality</Title>
+  <ImageCard src="images/photos/fabrikor-cabinets.webp" />
+  <LargeProductCard
+    title="FABRIKÖR Glass door cabinet"
+    buttonText="Browse our new lower prices">
+    <p
+      style="
+    margin-bottom: 0.625rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.7142;">
+      Now £129
+    </p>
+    <p
+      style="
+  margin-bottom: 0.625rem;
+  font-size: 0.875rem;
+  line-height: 1.7142;">
+      Was £150
+    </p>
+  </LargeProductCard>
   <Rule />
 </Section>

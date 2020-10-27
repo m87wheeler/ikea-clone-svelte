@@ -1,12 +1,7 @@
 <script>
-  import { propTypes } from "../../assets/PropTypes";
-
   export let style;
   export let ref;
   export let shadow = false;
-
-  propTypes(shadow, "bool");
-  //   propTypes(ref, "string");
 </script>
 
 <style type="text/scss">
