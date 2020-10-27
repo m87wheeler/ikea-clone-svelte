@@ -77,12 +77,12 @@
   </LargeProductCard>
 </Section>
 <Section>
-  <Title>Quick guides to a more sustainable life at home</Title>
-  <Slideshow data={slideShowData[0]} />
+  <Title type="h2">Quick guides to a more sustainable life at home</Title>
+  <Slideshow type="images" data={slideShowData[0]} />
 </Section>
 <Section>
-  <Title>More ideas and inspiration</Title>
-  <p>Button carousel goes here</p>
+  <Title type="h2">More ideas and inspiration</Title>
+  <Slideshow type="buttons" data={slideShowData[1]} noSlider showMax={2} />
   <p>Picture gallery goes here</p>
   <Button>Load 12 more</Button>
   <Rule />

@@ -136,5 +136,15 @@ export const slideShowData = [
       href: "",
     },
   ],
-  [],
+  [
+    { text: "Bedroom", href: "" },
+    { text: "Living Room", href: "" },
+    { text: "Kitchen", href: "" },
+    { text: "Workspace", href: "" },
+    { text: "Outdoor", href: "" },
+    { text: "Bathroom", href: "" },
+    { text: "Baby & Children Room", href: "" },
+    { text: "Dining", href: "" },
+    { text: "Hallway", href: "" },
+  ],
 ];

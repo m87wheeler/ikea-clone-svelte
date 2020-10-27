@@ -2,6 +2,10 @@
   import Button from "../atoms/Button.svelte";
 
   export let data = [];
+  export let type = "images";
+  export let showMax = data.length || 0;
+  export let noSlider = false;
+  $: max = showMax;
   let rail;
   let selected = false;
   $: scrolled = 0;
@@ -38,15 +42,21 @@
   .slideshow {
     position: relative;
     width: 100%;
-    height: 24rem;
     padding-bottom: 1rem;
     overflow: hidden;
     background: $color-white;
+
+    &--images {
+      height: 24rem;
+    }
+    &--buttons {
+      height: 7rem;
+    }
   }
 
   .image-rail {
     width: 100%;
-    height: 22.375rem;
+    height: 97%;
     padding: 1rem 0;
     overflow-y: hidden;
     overflow-x: scroll;
@@ -54,6 +64,12 @@
     &__container {
       display: flex;
       flex-flow: row nowrap;
+
+      .btn-container {
+        &:not(:first-of-type) {
+          margin-left: 0.5rem;
+        }
+      }
     }
   }
 
@@ -130,26 +146,48 @@
   }
 </style>
 
-<div class="slideshow">
+<div
+  class="slideshow"
+  class:slideshow--images={type === 'images'}
+  class:slideshow--buttons={type === 'buttons'}>
   <div class="image-rail" on:scroll={handleScroll} bind:this={rail}>
     <div class="image-rail__container">
-      {#each data as image}
-        <div class="image" style={`background-image: url(${image.src})`}>
-          <div class="image__btn">
-            <Button tertiary>{image.text}</Button>
+      {#if type === 'images'}
+        {#each data as image}
+          <div class="image" style={`background-image: url(${image.src})`}>
+            <div class="image__btn">
+              <Button tertiary>{image.text}</Button>
+            </div>
           </div>
-        </div>
-      {/each}
+        {/each}
+      {:else if type === 'buttons'}
+        {#each data as button, i}
+          {#if i < max}
+            <div class="btn-container">
+              <Button tertiary small>{button.text}</Button>
+            </div>
+          {/if}
+        {/each}
+        {#if max < data.length}
+          <div class="btn-container">
+            <Button tertiary small on:click={() => (max = data.length)}>
+              {`${data.length - max}+ more`}
+            </Button>
+          </div>
+        {/if}
+      {/if}
     </div>
   </div>
   <div class="indicator">
-    <input
-      class="slider"
-      type="range"
-      min="0"
-      max="100"
-      step="0.5"
-      bind:value={scrolled}
-      on:input={handleSlider} />
+    {#if !noSlider}
+      <input
+        class="slider"
+        type="range"
+        min="0"
+        max="100"
+        step="0.5"
+        bind:value={scrolled}
+        on:input={handleSlider} />
+    {/if}
   </div>
 </div>

@@ -1,6 +1,7 @@
 <script>
   export let secondary = false;
   export let tertiary = false;
+  export let small = false;
   export let href = "";
   export let style = "";
 </script>
@@ -10,7 +11,7 @@
 
   .button {
     display: inline-block;
-    min-width: 8.125rem;
+    width: auto;
     height: auto;
     padding: 0.75rem 1.5rem;
     border: 1px solid $color-gray-200;
@@ -21,7 +22,6 @@
     font-weight: 700;
     text-decoration: none;
     text-align: center;
-    letter-spacing: 0;
     background: transparent;
     color: $color-gray-900;
     transition: all 0.2s ease;
@@ -29,6 +29,14 @@
 
     &:hover {
       border: 1px solid $color-gray-700;
+    }
+
+    &--small {
+      width: auto;
+      padding: 0.75rem 1.5rem 0.75rem 1.5rem;
+      border-radius: 1.75rem;
+      font-size: 0.7rem;
+      white-space: nowrap;
     }
 
     &--secondary {
@@ -59,6 +67,7 @@
     class="button"
     class:button--secondary={secondary}
     class:button--tertiary={tertiary}
+    class:button--small={small}
     {href}
     {style}><slot /></a>
 {:else}
@@ -66,5 +75,7 @@
     class="button"
     class:button--secondary={secondary}
     class:button--tertiary={tertiary}
-    {style}><slot /></button>
+    class:button--small={small}
+    {style}
+    on:click><slot /></button>
 {/if}
