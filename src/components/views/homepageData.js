@@ -102,3 +102,39 @@ export const productData = [
     },
   ],
 ];
+
+export const slideShowData = [
+  [
+    {
+      src: "images/photos/eat-sustainably.webp",
+      text: "Food",
+      icon: "",
+      href: "/",
+    },
+    {
+      src: "images/photos/how-to-choose-furniture.webp",
+      text: "Furniture",
+      icon: "",
+      href: "/",
+    },
+    {
+      src: "images/photos/how-to-save-energy.webp",
+      text: "Water & energy",
+      icon: "",
+      href: "",
+    },
+    {
+      src: "images/photos/how-to-choose-materials.webp",
+      text: "Materials",
+      icon: "",
+      href: "",
+    },
+    {
+      src: "images/photos/a-healthier-home.webp",
+      text: "Health",
+      icon: "",
+      href: "",
+    },
+  ],
+  [],
+];

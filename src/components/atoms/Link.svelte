@@ -3,7 +3,7 @@
 
   export let href = "/";
   export let icon = false;
-  export let style;
+  export let style = "";
 </script>
 
 <style type="text/scss">

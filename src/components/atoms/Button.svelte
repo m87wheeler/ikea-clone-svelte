@@ -1,8 +1,8 @@
 <script>
   export let secondary = false;
   export let tertiary = false;
-  export let href;
-  export let style;
+  export let href = "";
+  export let style = "";
 </script>
 
 <style type="text/scss">
@@ -54,7 +54,7 @@
   }
 </style>
 
-{#if href}
+{#if href.length}
   <a
     class="button"
     class:button--secondary={secondary}

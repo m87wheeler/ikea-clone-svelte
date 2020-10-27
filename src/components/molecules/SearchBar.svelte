@@ -40,7 +40,7 @@
     &__primary {
       width: calc(inherit - 4px);
       height: calc(inherit - 4px);
-      border: 2px solid blue;
+      border: 2px solid $color-ikea-blue;
     }
 
     &__secondary {

@@ -1,6 +1,6 @@
 <script>
-  export let style;
-  export let ref;
+  export let style = "";
+  export let ref = "";
   export let shadow = false;
 </script>
 

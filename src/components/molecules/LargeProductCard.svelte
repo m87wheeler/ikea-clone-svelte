@@ -3,9 +3,9 @@
   import Card from "../atoms/Card.svelte";
   import Title from "../atoms/Title.svelte";
 
-  export let title;
-  export let buttonText;
-  export let price;
+  export let title = "";
+  export let buttonText = "";
+  export let price = null;
 </script>
 
 <style type="text/scss">

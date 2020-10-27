@@ -6,7 +6,10 @@
 </script>
 
 <style type="text/scss">
+  @import "../../style/Theme.scss";
+
   .overlay {
+    @include no-select;
     position: absolute;
     top: 0;
     left: 0;

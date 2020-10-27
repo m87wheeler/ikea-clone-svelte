@@ -10,8 +10,9 @@
   import Link from "../atoms/Link.svelte";
   import SeeMoreCard from "../molecules/SeeMoreCard.svelte";
   import ImageOverlay from "../molecules/ImageOverlay.svelte";
+  import Slideshow from "../organisms/Slideshow.svelte";
 
-  import { productData } from "./productData";
+  import { productData, slideShowData } from "./homepageData";
 </script>
 
 <style type="text/scss">
@@ -32,7 +33,7 @@
     <Title>See our products in real homes <br /> @ikeauk</Title>
     <Button href="#">View more</Button>
   </Card>
-  <p>Slideshow goes here</p>
+  <p>Carousel goes here</p>
   <Rule />
 </Section>
 <Section>
@@ -74,5 +75,50 @@
       Was £150
     </p>
   </LargeProductCard>
+</Section>
+<Section>
+  <Title>Quick guides to a more sustainable life at home</Title>
+  <Slideshow data={slideShowData[0]} />
+</Section>
+<Section>
+  <Title>More ideas and inspiration</Title>
+  <p>Button carousel goes here</p>
+  <p>Picture gallery goes here</p>
+  <Button>Load 12 more</Button>
   <Rule />
+</Section>
+<Section>
+  <Title>Important information</Title>
+  <Button>See the latest updates</Button>
+  <p>Covid Statement</p>
+  <Button>Creating safer homes together</Button>
+  <p>Secure it! Statement</p>
+  <Button>
+    IKEA recalls TROLIGTVIS travel mug due to important safety warning
+  </Button>
+  <p>TROLIGTVIS image</p>
+  <Rule />
+</Section>
+<Section>
+  <Title>Furniture and home inspiration</Title>
+  <p>
+    For more than 70 years, we have worked to create a better everyday life for
+    the many people. As a home furnishing store, we do this by producing
+    furniture that is well-designed, functional and affordable. Here you will
+    find everything from
+    <a href="/">smart home</a>
+    solutions to a large selection of
+    <a href="/">bedroom furniture</a>,
+    <a href="/">lighting</a>,
+    <a href="/">sofas</a>,
+    <a href="/">homeware</a>,
+    <a href="/">blinds</a>,
+    <a href="/">curtains</a>,
+    <a href="/">bedding</a>
+    and more. Discover our wide range of products in-store or online!
+  </p>
+  <Rule />
+</Section>
+<Section>
+  <Button tertiary>Back to top</Button>
 </Section>
