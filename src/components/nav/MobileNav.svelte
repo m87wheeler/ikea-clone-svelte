@@ -7,13 +7,16 @@
   import { createEventDispatcher } from "svelte";
   import SearchBar from "../molecules/SearchBar.svelte";
   import MobileNavRooms from "./MobileNavRooms.svelte";
-  const dispatch = createEventDispatcher();
+  import MobileNavProducts from "./MobileNavProducts.svelte";
 
-  const toggleNav = () => dispatch("toggle", { show: false });
-
-  //   export let active = false;
-  let tempActive = true;
+  export let active = false;
   $: page = "main";
+
+  const dispatch = createEventDispatcher();
+  const toggleNav = () => {
+    page = "main";
+    dispatch("toggle", { show: false });
+  };
 </script>
 
 <style type="text/scss">
@@ -98,9 +101,11 @@
     }
 
     &__language {
+      padding-left: 1rem;
+
       .icon {
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: 1fr 1fr;
         column-gap: 0.25rem;
         align-items: center;
         font-weight: 600;
@@ -111,7 +116,7 @@
   }
 </style>
 
-<nav class="nav" class:nav--active={tempActive}>
+<nav class="nav" class:nav--active={active}>
   {#if page === 'main'}
     <div class="nav__head">
       <a href="/"><img {src} alt="IKEA Logo" /></a>
@@ -149,7 +154,7 @@
       </Button>
     </div>
   {:else if page === 'products'}
-    <p>Products</p>
+    <MobileNavProducts />
   {:else if page === 'rooms'}
     <MobileNavRooms />
   {/if}

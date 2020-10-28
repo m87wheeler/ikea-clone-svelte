@@ -5,10 +5,16 @@
   export let type = "images";
   export let showMax = data.length || 0;
   export let noSlider = false;
-  $: max = showMax;
+  export let imageOnly = false;
+  $: maxOnLoad = showMax;
   let rail;
   let selected = false;
   $: scrolled = 0;
+
+  // range props
+  export let min = 0;
+  export let max = 100;
+  export let step = 0.5;
 
   const handleScroll = (e) => {
     let v = e.target.offsetWidth,
@@ -91,6 +97,10 @@
       bottom: 1rem;
       left: 50%;
       transform: translateX(-50%);
+
+      &--hide {
+        display: none;
+      }
     }
   }
 
@@ -155,23 +165,23 @@
       {#if type === 'images'}
         {#each data as image}
           <div class="image" style={`background-image: url(${image.src})`}>
-            <div class="image__btn">
+            <div class="image__btn" class:image__btn--hide={imageOnly}>
               <Button tertiary>{image.text}</Button>
             </div>
           </div>
         {/each}
       {:else if type === 'buttons'}
         {#each data as button, i}
-          {#if i < max}
+          {#if i < maxOnLoad}
             <div class="btn-container">
               <Button tertiary small>{button.text}</Button>
             </div>
           {/if}
         {/each}
-        {#if max < data.length}
+        {#if maxOnLoad < data.length}
           <div class="btn-container">
-            <Button tertiary small on:click={() => (max = data.length)}>
-              {`${data.length - max}+ more`}
+            <Button tertiary small on:click={() => (maxOnLoad = data.length)}>
+              {`${data.length - maxOnLoad}+ more`}
             </Button>
           </div>
         {/if}
@@ -183,9 +193,9 @@
       <input
         class="slider"
         type="range"
-        min="0"
-        max="100"
-        step="0.5"
+        {min}
+        {max}
+        {step}
         bind:value={scrolled}
         on:input={handleSlider} />
     {/if}

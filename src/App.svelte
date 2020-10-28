@@ -3,29 +3,18 @@
   import Header from "./components/organisms/Header.svelte";
   import SearchBar from "./components/molecules/SearchBar.svelte";
   import Homepage from "./components/views/Homepage.svelte";
-  import MobileNav from "./components/views/MobileNav.svelte";
+  import MobileNav from "./components/nav/MobileNav.svelte";
+  import ProductPage from "./components/views/ProductPage.svelte";
 
-  console.log(
-    "%cLEFT OFF IN MOBILENAVROOMS",
-    `
-  background: white;
-  border: 3px solid red;
-  color: red;
-  font-size: 20px;
-  margin: 5px;
-  padding: 20px;
-`
-  );
-
-  let showNav = true;
-  const toggleNav = (e) => {
-    showNav = e.detail.show;
-    console.log("click");
-  };
+  let showNav = false;
+  const toggleNav = (e) => (showNav = e.detail.show);
   if (showNav) {
     document.body.style.height = "100%";
     document.body.style.overflow = "hidden";
   }
+
+  // update currentProduct to display ProductPage
+  let currentProduct = 90476908;
 </script>
 
 <style type="text/scss">
@@ -38,4 +27,5 @@
 <Header on:toggle={toggleNav} />
 <MobileNav active={showNav} on:toggle={toggleNav} />
 <SearchBar placeholder="What are you looking for?" hover />
-<Homepage />
+<!-- <Homepage /> -->
+<ProductPage artNumber={currentProduct} />

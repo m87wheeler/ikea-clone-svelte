@@ -1,4 +1,5 @@
 <script>
+  export let style;
 </script>
 
 <style type="text/scss">
@@ -12,6 +13,7 @@
 </style>
 
 <svg
+  {style}
   focusable="false"
   width="24"
   height="24"
