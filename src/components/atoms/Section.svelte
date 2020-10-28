@@ -10,6 +10,6 @@
   }
 </style>
 
-<div class="section">
+<section class="section">
   <slot />
-</div>
+</section>

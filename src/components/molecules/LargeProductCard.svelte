@@ -1,4 +1,6 @@
 <script>
+  import { formatPrice } from "../../assets/functions";
+
   import Button from "../atoms/Button.svelte";
   import Card from "../atoms/Card.svelte";
   import Title from "../atoms/Title.svelte";
@@ -31,7 +33,7 @@
   <div class="container">
     <Title type="h2">{title}</Title>
     <slot>
-      <p>{price}</p>
+      <p>{formatPrice(price)}</p>
     </slot>
     <Button style="margin-top: 1.5rem;" secondary>{buttonText}</Button>
   </div>

@@ -2,15 +2,12 @@
   import Icon from "../atoms/Icon.svelte";
 
   export let text = "Notification";
-  export let action = "link";
+  export let action = true;
   export let href = "Homepage";
-  export let show = false;
-  export let expand = false;
+  let show = false;
+  let expand = false;
 
-  const toggleexpand = () => {
-    expand = !expand;
-    console.log(expand);
-  };
+  const toggleExpand = () => (expand = !expand);
 
   setTimeout(() => {
     show = true;
@@ -100,7 +97,7 @@
 
 <div class={`notification ${show && 'notification--active'}`}>
   <div class="message-section">
-    {#if action === 'link'}
+    {#if action}
       <a {href}>
         <Icon icon="notification" hover={false} xsmall />
         <span>{text}</span>
@@ -113,7 +110,7 @@
         icon="toggleArrow"
         small
         background="gray-800"
-        on:click={toggleexpand} />
+        on:click={toggleExpand} />
     </div>
   </div>
   <div class={`dismiss ${expand && 'dismiss--expand'}`}>

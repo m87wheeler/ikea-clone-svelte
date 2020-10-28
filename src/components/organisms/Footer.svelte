@@ -6,7 +6,6 @@
   import Link from "../atoms/Link.svelte";
   import Rule from "../atoms/Rule.svelte";
   import Section from "../atoms/Section.svelte";
-  import SectionText from "../atoms/SectionText.svelte";
   import Title from "../atoms/Title.svelte";
 </script>
 

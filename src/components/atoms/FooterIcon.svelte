@@ -15,6 +15,8 @@
   export let icon = "facebook";
   export let round;
   export let square;
+  export let style;
+  export let ref;
 </script>
 
 <style type="text/scss">
@@ -62,7 +64,7 @@
   }
 </style>
 
-<div class="icon" class:icon--round={round} class:icon--square={square}>
+<div {style} {ref} class={`icon ${square ? 'icon--square' : 'icon--round'}`}>
   <span class="icon__wrapper">
     {#if icon === 'facebook'}
       <Facebook />

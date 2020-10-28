@@ -89,7 +89,6 @@
 
 <div
   {ref}
-  on:click
   class={`container ${small ? 'container--small' : xsmall ? 'container--xsmall' : null} ${!hover && 'container--no-hover'}`}
   style={`cursor: ${cursor}; ${style}`}
   on:click>
