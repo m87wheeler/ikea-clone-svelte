@@ -18,6 +18,6 @@
   }
 </style>
 
-<div {ref} class={`card ${shadow && 'card--shadow'}`} {style}>
+<div {ref} class={`card ${shadow && 'card--shadow'}`} {style} on:click>
   <slot />
 </div>

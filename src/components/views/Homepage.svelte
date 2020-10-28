@@ -43,10 +43,10 @@
     everything you need to create a festive feel.
   </SectionText>
   <ImageCard src="images/photos/strala-lights.jpg">
-    <ImageOverlay data={productData[0]} />
+    <ImageOverlay data={productData[0]} on:productview />
   </ImageCard>
   <ImageCard src="images/photos/christmas-decor.jpg">
-    <ImageOverlay data={productData[1]} />
+    <ImageOverlay data={productData[1]} on:productview />
   </ImageCard>
   <Link style="display: grid; margin: 1.25rem 0 1rem 0;" icon>
     See all products for Christmas

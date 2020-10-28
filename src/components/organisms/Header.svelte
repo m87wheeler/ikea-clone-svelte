@@ -5,6 +5,7 @@
   import { createEventDispatcher } from "svelte";
   const dispatch = createEventDispatcher();
   const toggleNav = () => dispatch("toggle", { show: true });
+  const setHome = () => dispatch("sethome", {});
 </script>
 
 <style type="text/scss">
@@ -27,7 +28,7 @@
 </style>
 
 <header>
-  <img {src} alt="ikea logo" />
+  <img {src} alt="ikea logo" on:click={setHome} style="cursor: pointer;" />
   <Icon icon="user" ref="header-icon" />
   <Icon icon="wishList" ref="header-icon" />
   <Icon icon="shoppingBag" ref="header-icon" />

@@ -33,9 +33,11 @@
       news={product.news}
       family={product.family}
       title={product.title}
+      artno={product.artno}
       productType={product.productType}
       regularPrice={product.regularPrice}
       price={product.price}
-      pieces={product.pieces} />
+      pieces={product.pieces}
+      on:productview />
   {/each}
 </div>

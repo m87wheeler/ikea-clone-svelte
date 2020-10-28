@@ -7,6 +7,7 @@
   export let family = false;
   export let href = "";
   export let title = "";
+  export let artno;
   export let productType = "";
   export let regularPrice = 0;
   export let price = 0;
@@ -124,9 +125,11 @@
       {family}
       {href}
       {title}
+      {artno}
       {productType}
       {regularPrice}
       {price}
-      {pieces} />
+      {pieces}
+      on:productview />
   </div>
 </div>

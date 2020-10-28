@@ -5,6 +5,7 @@
   import Homepage from "./components/views/Homepage.svelte";
   import MobileNav from "./components/nav/MobileNav.svelte";
   import ProductPage from "./components/views/ProductPage.svelte";
+  import Footer from "./components/organisms/Footer.svelte";
 
   let showNav = false;
   const toggleNav = (e) => (showNav = e.detail.show);
@@ -14,7 +15,13 @@
   }
 
   // update currentProduct to display ProductPage
+  let currentPage = "home";
   let currentProduct = 90476908;
+
+  const productView = (e) => {
+    currentPage = "product";
+    currentProduct = e.detail.artno;
+  };
 </script>
 
 <style type="text/scss">
@@ -24,8 +31,12 @@
   text="Our Christmas shop is now open"
   action="link"
   href="#" />
-<Header on:toggle={toggleNav} />
+<Header on:toggle={toggleNav} on:sethome={() => (currentPage = 'home')} />
 <MobileNav active={showNav} on:toggle={toggleNav} />
 <SearchBar placeholder="What are you looking for?" hover />
-<!-- <Homepage /> -->
-<ProductPage artNumber={currentProduct} />
+{#if currentPage === 'home'}
+  <Homepage on:productview={productView} />
+{:else if currentPage === 'product'}
+  <ProductPage artNumber={currentProduct} />
+{/if}
+<Footer />

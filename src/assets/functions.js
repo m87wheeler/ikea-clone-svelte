@@ -5,7 +5,7 @@ export const formatPrice = (num, ret) => {
     currency.pounds = num;
   } else {
     currency.pounds = Math.floor(num);
-    currency.pence = (num - Math.floor(num)) * 100;
+    currency.pence = Math.round((num - Math.floor(num)) * 100);
   }
 
   if (ret === "obj") {

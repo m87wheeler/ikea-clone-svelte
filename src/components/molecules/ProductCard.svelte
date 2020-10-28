@@ -1,19 +1,30 @@
 <script>
+  import { createEventDispatcher } from "svelte";
+  const dispatch = createEventDispatcher();
+
   import Card from "../atoms/Card.svelte";
   import Family from "../atoms/Family.svelte";
   import Icon from "../atoms/Icon.svelte";
   import News from "../atoms/News.svelte";
+  import Price from "../atoms/Price.svelte";
   import Title from "../atoms/Title.svelte";
 
   export let news = false;
   export let family = false;
   export let href = "";
+  export let artno;
   export let title = "";
   export let productType = "";
   export let regularPrice = 0;
   export let price = 0;
   export let pieces = 0;
   export let style = "";
+
+  const viewProduct = () => {
+    dispatch("productview", {
+      artno,
+    });
+  };
 </script>
 
 <style type="text/scss">
@@ -74,17 +85,11 @@
       span {
         font-size: 0.625rem;
       }
-
-      .currency {
-        padding-right: 0.1rem;
-        vertical-align: super;
-        font-weight: 900;
-      }
     }
   }
 </style>
 
-<Card shadow {style}>
+<Card shadow {style} on:click={viewProduct}>
   <div class="info">
     <div class="info__promotional">
       {#if news}
@@ -103,7 +108,7 @@
       <p class="info__reg-price">Regular price £{regularPrice}</p>
     {/if}
     <p class="info__price">
-      <span class="currency">£</span>{price}
+      <Price {price} />
       {#if pieces > 0}<span>/ {pieces} pieces</span>{/if}
     </p>
   </div>
